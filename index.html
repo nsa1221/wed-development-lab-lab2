@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="mn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лаборатори 02: Хэрэглэгчийн анкет - Амарбаясгалан Энхтөр</title>
+</head>
+<body>
+
+    <header>
+        <h1>Оюутны Бүртгэлийн Анкет</h1>
+     
+        <nav>
+            <ul>
+                <li><a href="../index.html">Нүүр</a></li>
+                <li><a href="#anket">Анкет засах</a></li>
+                <li><a href="#sonirxol">Миний сонирхол</a></li>
+                <li><a href="#dun">Миний дүн</a></li>
+                <li><a href="#projects">Төслүүд ба Олимпиад</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="anket">
+            <article>
+                <h2>Хэрэглэгчийн Анкет Бөглөх</h2>
+                <p>Доорх формын дагуу мэдээллээ бүрэн, үнэн зөв зааж бөглөнө үү.</p>
+                
+                <form action="#" method="POST" enctype="multipart/form-data">
+                    <fieldset>
+                        <legend>Хувийн мэдээлэл</legend>
+                        
+                        <label for="fullname">Овог нэр:</label><br>
+                        <input type="text" id="fullname" name="fullname" value="Амарбаясгалан Энхтөр" placeholder="А. Энхтөр" required minlength="2"><br><br>
+
+                        <label for="email">Цахим хаяг (Email):</label><br>
+                        <input type="email" id="email" name="email" value="amarbayasgalan@must.edu.mn" placeholder="example@domain.com" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"><br><br>
+
+                        <label for="password">Нууц үг:</label><br>
+                        <input type="password" id="password" name="password" required minlength="6"><br><br>
+
+                        <label for="phone">Утасны дугаар:</label><br>
+                        <input type="tel" id="phone" name="phone" pattern="[0-9]{8}" placeholder="50554407" value="50554407" required><br><br>
+
+                        <label for="dob">Төрсөн огноо:</label><br>
+                        <input type="date" id="dob" name="dob" required><br><br>
+
+                        <label for="github">GitHub / Портфолио линк:</label><br>
+                        <input type="url" id="github" name="github" placeholder="https://github.com/username" pattern="https://.*" required><br><br>
+
+                        <label for="semester">Одоо суралцаж буй семестр (1-8):</label><br>
+                        <input type="number" id="semester" name="semester" min="1" max="8" value="4" required><br><br>
+
+                        <label>Хүйс:</label><br>
+                        <input type="radio" id="male" name="gender" value="male" checked>
+                        <label for="male">Эрэгтэй</label>
+                        <input type="radio" id="female" name="gender" value="female">
+                        <label for="female">Эмэгтэй</label><br>
+                    </fieldset>
+                    <br>
+
+                    <fieldset>
+                        <legend>Боловсрол ба Сонирхол</legend>
+
+                        <label for="degree">Суралцаж буй түвшин:</label><br>
+                        <select id="degree" name="degree" required>
+                            <option value="">-- Сонгоно уу --</option>
+                            <option value="bachelor" selected>Бакалавр</option>
+                            <option value="master">Магистр</option>
+                            <option value="doctor">Докторант</option>
+                        </select><br><br>
+
+                        <label for="os_tool">Үндсэн ашигладаг систем / хэрэгсэл:</label><br>
+                        <input list="tools" id="os_tool" name="os_tool" placeholder="Ашигладаг системээ сонгох эсвэл бичих">
+                        <datalist id="tools">
+                            <option value="Linux (Ubuntu / Arch)">
+                            <option value="Cisco Packet Tracer">
+                            <option value="DB Browser for SQLite">
+                            <option value="VS Code & Java Swing">
+                        </datalist><br><br>
+
+                        <label for="study_hours">Өдөрт код бичих / суралцах цаг (1-12 цаг):</label><br>
+                        <input type="range" id="study_hours" name="study_hours" min="1" max="12" value="6" oninput="this.nextElementSibling.value = this.value">
+                        <output>6</output> цаг<br><br>
+
+                        <label>Сонирхож буй технологиуд:</label><br>
+                        <input type="checkbox" id="networking" name="skills" value="Networking" checked>
+                        <label for="networking">Cisco Сүлжээ & IPv6/OSPF</label><br>
+                        <input type="checkbox" id="iot" name="skills" value="IoT" checked>
+                        <label for="iot">ESP32 & Microcontrollers</label><br>
+                        <input type="checkbox" id="java" name="skills" value="Java" checked>
+                        <label for="java">Java & OOP & SQLite</label><br><br>
+
+                        <label for="avatar">Профайл зураг оруулна уу:</label><br>
+                        <input type="file" id="avatar" name="avatar" accept="image/*"><br><br>
+
+                        <label for="bio">Товч танилцуулга / Өөрийн тухай:</label><br>
+                        <textarea id="bio" name="bio" rows="4" cols="50" placeholder="Өөрийн танилцуулгыг энд бичнэ үү...">ШУТИС-ийн Компьютерийн сүлжээ, микроэлектроник, програмчлалын чиглэлээр суралцдаг. ESP32, ATmega микроконтроллер болон Cisco сүлжээний тохиргоо, Java OOP ба SQLite өгөгдлийн бааз дээр төслүүд хөгжүүлдэг.</textarea><br>
+                    </fieldset>
+                    <br>
+
+                    <button type="submit">Анкет Илгээх</button>
+                    <button type="reset">Дахин эхлүүлэх</button>
+                </form>
+            </article>
+        </section>
+
+        <section id="sonirxol">
+            <article>
+                <h2>Миний сонирхол</h2>
+                <ul>
+                    <li>ESP32 ба ATmega микроконтроллер, IoT төхөөрөмж хөгжүүлэлт (Smart Cane, Sensors)</li>
+                    <li>Cisco сүлжээний инженерчлэл (IPv4/IPv6, VLSM, OSPF, VLANs) ба Wireshark анализ</li>
+                    <li>Linux үйлдлийн систем, Java Swing GUI програмчлал болон SQLite баазын архитектур</li>
+                </ul>
+            </article>
+        </section>
+
+
+        <section id="dun">
+            <article>
+                <h2>Миний дүн</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Хичээл</th>
+                            <th>Дүн</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Компьютерийн сүлжээ</td>
+                            <td>98</td>
+                        </tr>
+                        <tr>
+                            <td>Обьект хандалгат програмчлал (Java)</td>
+                            <td>95</td>
+                        </tr>
+                        <tr>
+                            <td>Өгөгдлийн баазын систем (SQLite)</td>
+                            <td>92</td>
+                        </tr>
+                        <tr>
+                            <td>Магадлалын  ба математик статистик</td>
+                            <td>90</td>
+                        </tr>
+                        <tr>
+                            <td>Микропроцессор </td>
+                            <td>89</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+
+        <section id="projects">
+            <article>
+                <h2>Миний төслүүд ба Олимпиад</h2>
+                <ul>
+                    <li><strong>XIV Үндэсний Компьютерийн Сүлжээний Олимпиад:</strong> ШУТИС дээр зохион байгуулагдсан улсын олимпиадын оролцогч.</li>
+                    <li><strong>Smart Cane IoT Prototype:</strong> ESP32, Neo-6M GPS модуль, Ultrasonic дүрсийн мэдрэгч болон Telegram Bot интеграцитай ухаалаг таяг.</li>
+                    <li><strong>Network Diagnostic Tool:</strong> ESP32 ба OLED дэлгэц ашигласан Wi-Fi сканер, сигналын хэмжигч төхөөрөмж.</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    
+    <footer>
+        <p>&copy; 2026 Веб зохиомж хичээл. Бүх эрх хуулиар хамгаалагдсан. | Амарбаясгалан Энхтөр</p>
+    </footer>
+
+</body>
+</html>
